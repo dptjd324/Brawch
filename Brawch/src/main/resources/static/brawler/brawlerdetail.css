@@ -1,0 +1,69 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.header .logo {
+    font-size: 20px;
+}
+
+.header .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.header .menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.content {
+    padding: 20px;
+}
+
+.title-section h1 {
+    font-size: 24px;
+}
+
+.grid-section {
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.box {
+    width: 50px; /* 기본값 */
+    height: 50px;
+    background-color: #ddd;
+}
+
+.box.small {
+    width: 50px;
+}
+
+.box.medium {
+    width: 100px;
+}
+
+.box.large {
+    width: 150px;
+}
+
+.arrow {
+    margin: 0px auto; /* 화살표 간격 조정 */
+}
