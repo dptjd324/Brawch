@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/top/top.css">
+</head>
+
+<body>
+    <div th:fragment="top">
+        <header>
+            <nav>
+                <ul>
+                    <li><a th:href="@{/main}">홈</a></li>
+                    <li><a th:href="@{/brawler}">브롤러</a></li>
+                    <li><a href="#">모드</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    </div>
+</body>
+</html>

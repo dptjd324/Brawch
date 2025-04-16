@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹페이지</title>
+    <link rel="stylesheet" href="/css/main/main.css">
+</head>
+<body>
+    <div id="top" th:insert="~{top/top :: top}"></div>
+
+<main>
+    <div class="logo-box">로고</div>
+
+    <div class="search-box">
+        <label for="player-search">플레이어 검색</label>
+        <div class="search-bar">
+            <select>
+                <option>Player</option>
+            </select>
+            <input type="text" id="player-search" placeholder="플레이어 태그를 입력하세요">
+            <button>🔍</button>
+        </div>
+    </div>
+
+    <div class="search-box">
+        <label for="club-search">클럽 검색</label>
+        <div class="search-bar">
+            <select>
+                <option>Club</option>
+            </select>
+            <input type="text" id="club-search" placeholder="클럽 태그를 입력하세요">
+            <button>🔍</button>
+        </div>
+    </div>
+</main>
+</body>
+</html>
