@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/mainLayout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/top/top.css">
+    <link rel="stylesheet" href="/css/main/main.css">
+    <link rel="stylesheet" href="/css/brawler/brawlermain.css">
+
+
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <div class="search-container">
+            <div class="search-area">
+                <div class="search-input">
+                    <label for="player">플레이어:</label>
+                    <input type="text" id="player" placeholder="플레이어 태그를 입력하세요">
+                    <button>🔍</button>
+                </div>
+                <div class="search-input">
+                    <label for="club">Club:</label>
+                    <input type="text" id="club" placeholder="클럽 태그를 입력하세요">
+                    <button>🔍</button>
+                </div>
+            </div>
+            <div class="mode-select">
+                <div class="mode-item">대미지 딜러</div>
+                <div class="mode-item">컨트롤러</div>
+                <div class="mode-item">투척수</div>
+                <div class="mode-item">탱커 </div>
+                <div class="mode-item">서포터</div>
+                <div class="mode-item">어쌔신</div>
+                <div class="mode-item">저격수</div>
+            </div>
+        </div>
+
+        <div class="brawler-container">
+            <div class="brawler-search">
+                <input type="text" placeholder="브롤러를 검색하세요">
+                <button>🔍</button>
+            </div>
+            <div class="brawler-list">
+                <div class="brawler-item">
+                    <div class="brawler-item-image" th:href="@{/detail}"></div>
+                    <div class="stats-container">
+                        <div class="stats-item">
+                            <label>순위</label>
+                            <span>1</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>브롤러</label>
+                            <span>브롤러명</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>승률</label>
+                            <span>55%</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>픽률</label>
+                            <span>15%</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>벤률</label>
+                            <span>5%</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>카운터</label>
+                            <span>카운터</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 나머지 브롤러 아이템들 추가 -->
+                <div class="brawler-item">
+                    <div class="brawler-item-image" ></div>
+                    <div class="stats-container">
+                        <div class="stats-item">
+                            <label>순위</label>
+                            <span>1</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>브롤러</label>
+                            <span>브롤러명</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>승률</label>
+                            <span>55%</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>픽률</label>
+                            <span>15%</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>벤률</label>
+                            <span>5%</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>카운터</label>
+                            <span>카운터</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="brawler-item">
+                    <div class="brawler-item-image"></div>
+                    <div class="stats-container">
+                        <div class="stats-item">
+                            <label>순위</label>
+                            <span>1</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>브롤러</label>
+                            <span>브롤러명</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>승률</label>
+                            <span>55%</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>픽률</label>
+                            <span>15%</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>벤률</label>
+                            <span>5%</span>
+                        </div>
+                        <div class="stats-item">
+                            <label>카운터</label>
+                            <span>카운터</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

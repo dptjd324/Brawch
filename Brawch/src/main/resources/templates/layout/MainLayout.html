@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/top/top.css">
+    <link rel="stylesheet" href="/css/main/main.css">
+</head>
+<body>
+    <div id="top">
+        <th:block th:insert="top/top :: top">
+        </th:block>
+    </div>
+    <div id="content">
+        <th:block layout:fragment="content">
+        </th:block>
+    </div>
+    <footer class="footer">
+
+
+    </footer>
+</body>
+</html>
