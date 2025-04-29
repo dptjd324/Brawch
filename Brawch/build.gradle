@@ -38,6 +38,11 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.4'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	/*내가 따로 추가한 거*/
+	implementation 'com.google.code.gson:gson:2.10.1'
+	// ✅ PostgreSQL JDBC 드라이버 추가
+	implementation 'org.postgresql:postgresql:42.6.0'
+
 }
 
 tasks.named('test') {
