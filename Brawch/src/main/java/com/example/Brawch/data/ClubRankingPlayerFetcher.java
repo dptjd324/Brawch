@@ -9,12 +9,22 @@ import com.google.gson.*;
 public class ClubRankingPlayerFetcher {
 
     // Bearer 뒤에 자기 API TOKEN 넣어주기 Bearer 지우면 안됨!
-    private static final String API_TOKEN = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjA1YmRkOTI3LWE5NTQtNDEwNC04NTQyLTYxMjA2NjdjNTM1NCIsImlhdCI6MTc0NTg4ODM1MSwic3ViIjoiZGV2ZWxvcGVyL2UzYWI0ZGM4LWI3NzctODMyZi04YTRhLTBkMTAzZDQyMWE0MCIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiMjExLjIzOC4xMDkuMTY4Il0sInR5cGUiOiJjbGllbnQifV19.wbsZSs7vCPBPv-VyHb97dmm0BOL7DZdQLX8GeEfljInC4-kKJbbBBHjh_FzXGqs8aJCLoGrY6U1pfMqbplJJ5Q";
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/testdb";
-    //db 이름 정해서 aws로 진행할때 이름으로 수정하기
+    private static final String API_TOKEN = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImM3NmIyOWY5LTRlMDEtNGEyNS05NmNjLWVmZTNhMzAxM2UxNiIsImlhdCI6MTc0NDY1MjA5Miwic3ViIjoiZGV2ZWxvcGVyL2UzYWI0ZGM4LWI3NzctODMyZi04YTRhLTBkMTAzZDQyMWE0MCIsInNjb3BlcyI6WyJicmF3bHN0YXJzIl0sImxpbWl0cyI6W3sidGllciI6ImRldmVsb3Blci9zaWx2ZXIiLCJ0eXBlIjoidGhyb3R0bGluZyJ9LHsiY2lkcnMiOlsiNTkuMTguMTY0LjE2Il0sInR5cGUiOiJjbGllbnQifV19.EQTRAM9zt8_CTuVOxwcue12XR2sQGYFFUPUDqRj2R4vRwgTwyHrGi_kQU1ZlsHL91lPJ-6YFaUnt9P_DkYrwww";
+
+    // DB 연동전에 하던 방법
+    /* private static final String DB_URL = "jdbc:postgresql://localhost:5432/neondb";
+    //db 이름 정해서 neon으로 진행할때 이름으로 수정하기
     private static final String DB_USER = "postgres";
     // 유저명
-    private static final String DB_PASSWORD = "1111";
+    private static final String DB_PASSWORD = "1111";*/
+
+    // ✅ 1. DB 접속 URL (sslmode 꼭 포함!)
+    private static final String DB_URL = "jdbc:postgresql://ep-late-dust-a15aghqb-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require";
+    // ✅ 2. 사용자명
+    private static final String DB_USER = "neondb_owner";
+    // ✅ 3. 비밀번호
+    private static final String DB_PASSWORD = "npg_jEgQ0G9kayeY";
+
     // 설정 비밀번호
     // ** 추가: 실행할 때 작업자가 자신의 batch_id를 지정
     // 조영래 : 1, 이예성 : 2, 강영우 : 3
@@ -81,7 +91,7 @@ public class ClubRankingPlayerFetcher {
     // 3. 모든 플레이어 저장
     private static void savePlayersToPostgres(Set<String> tags) {
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String sql = "INSERT INTO players (tag, batch_id) VALUES (?, ?) ON CONFLICT (tag) DO NOTHING";
+            String sql = "INSERT INTO player (tag, batch_id) VALUES (?, ?) ON CONFLICT (tag) DO NOTHING";
             PreparedStatement stmt = conn.prepareStatement(sql);
 
             for (String tag : tags) {
