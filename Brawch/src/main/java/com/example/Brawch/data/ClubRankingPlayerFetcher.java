@@ -28,7 +28,7 @@ public class ClubRankingPlayerFetcher {
     // 설정 비밀번호
     // ** 추가: 실행할 때 작업자가 자신의 batch_id를 지정
     // 조영래 : 1, 이예성 : 2, 강영우 : 3
-    private static final int BATCH_ID = 1; // ← 실행자별로 1, 2, 3 지정
+    private static final int BATCH_ID = 2; // ← 실행자별로 1, 2, 3 지정
 
     public static void main(String[] args) throws Exception {
         List<String> clubTags = fetchTopClubTags();

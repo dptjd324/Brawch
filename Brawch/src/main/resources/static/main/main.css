@@ -39,8 +39,9 @@ nav ul li a {
 
 .search-box {
     margin: 20px auto;
-    width: 50%;
+    width: 70%;
     text-align: left;
+    padding: 40px;
 }
 
 .search-bar {
