@@ -4,36 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹페이지</title>
-    <link rel="stylesheet" href="/css/main/main.css">
+    <title>brawch</title>
+<!--    <link rel="stylesheet" href="/static/main/main.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <div id="top" th:insert="~{top/top :: top}"></div>
-
-<main>
-    <div class="logo-box">로고</div>
-
-    <div class="search-box">
-        <label for="player-search">플레이어 검색</label>
-        <div class="search-bar">
-            <select>
-                <option>Player</option>
-            </select>
-            <input type="text" id="player-search" placeholder="플레이어 태그를 입력하세요">
-            <button>🔍</button>
+   <!-- <div id="top" th:insert="~{top/top :: top}"></div>-->
+   <body class="bg-gray-900 text-black font-sans min-h-screen flex flex-col">
+   <nav class="flex items-center justify-between px-6 py-4 bg-yellow-400 shadow-md">
+        <div class="flex items-center space-x-3">
+            <img src="/logo.png" alt="brawch 로고" class="w-10 h-10 rounded-full">
+            <span class="text-2xl font-bold text-black">Brawch</span>
         </div>
-    </div>
 
-    <div class="search-box">
-        <label for="club-search">클럽 검색</label>
-        <div class="search-bar">
-            <select>
-                <option>Club</option>
-            </select>
-            <input type="text" id="club-search" placeholder="클럽 태그를 입력하세요">
-            <button>🔍</button>
+        <!-- 내비게이션 링크 -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 flex gap-20">
+            <a href="/" class="text-lg font-semibold hover:underline text-black">홈</a>
+            <a href="/brawler" class="text-lg font-semibold hover:underline text-black">브롤러</a>
+            <a href="/map" class="text-lg font-semibold hover:underline text-black">모드</a>
         </div>
+    </nav>
+    <div class="mt-12 flex justify-center">
+        <img src="/logo.png" class="w-64 h-64" />
     </div>
-</main>
+<!--    &lt;!&ndash; 로고 추가 &ndash;&gt;-->
+<!--    <div class="text-center mt-10">-->
+<!--        <img src="/static/logo.png" alt="브롤전적검색 로고" class="mx-auto w-32 h-32">-->
+<!--    </div>-->
+
+    <!-- 플레이어 검색 -->
+    <div class="flex-grow flex items-center justify-center px-4">
+        <form action="/search" method="GET" class="flex w-full max-w-2xl border rounded-lg overflow-hidden shadow-lg">
+            <span class="bg-gray-100 px-6 py-4 flex items-center font-semibold text-lg w-32 justify-center">player</span>
+            <input
+                    type="text"
+                    name="tag"
+                    placeholder="플레이어 태그(#)를 입력하세요"
+                    class="flex-grow px-6 py-4 text-lg focus:outline-none"
+                    required
+            />
+            <button type="submit" class="bg-yellow-300 hover:bg-yellow-400 px-6 py-4 font-bold text-lg">검색</button>
+        </form>
+    </div>
+    </body>
+
+    <!--<main>
+        <div class="logo-box">로고</div>
+
+        <div class="search-box">
+            <label for="player-search">플레이어 검색</label>
+            <div class="search-bar">
+                <select>
+                    <option>Player</option>
+                </select>
+                <input type="text" id="player-search" placeholder="플레이어 태그를 입력하세요">
+                <button>🔍</button>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <label for="club-search">클럽 검색</label>
+            <div class="search-bar">
+                <select>
+                    <option>Club</option>
+                </select>
+                <input type="text" id="club-search" placeholder="클럽 태그를 입력하세요">
+                <button>🔍</button>
+            </div>
+        </div>
+    </main>-->
 </body>
 </html>
